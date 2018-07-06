@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Products Management" parallel="tests" >
+    <test name="Create New Product [Chrome]" >
+        <parameter name = "browser" value="chrome"/>
+        <classes>
+            <class name="co.inventorsoft.birdietests.tests.UserCanLoginSuccessfully"/>
+            <class name="co.inventorsoft.birdietests.tests.InvitationSending"/>
+        </classes>
+    </test>
+    <test name="Create New Product [Firefox]" >
+        <parameter name = "browser" value="firefox"/>
+        <classes>
+            <class name="co.inventorsoft.birdietests.tests.UserCanLoginSuccessfully"/>
+            <class name="co.inventorsoft.birdietests.tests.InvitationSending"/>
+        </classes>
+    </test>
+    <!--Prepare test for firefox and IE browsers-->
+
+</suite>
