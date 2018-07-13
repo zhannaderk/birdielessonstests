@@ -1,34 +1,28 @@
 package co.inventorsoft.birdietests.utils;
 
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeClass;
 
-public class AuthenticatedBaseTest extends BaseTest {
+public class AuthenticatedBaseTest extends DriverActions {
 
-    public AuthenticatedBaseTest(WebDriver driver) {
-        super(driver);
-    }
-
-    protected LoginData userCredentials() {
-        return new LoginData("satelite2042@gmail.com", "maksg123");
+    protected LoginData proCredentials() {
+        return new LoginData("salamandra2043@gmail.com", "12345");
     }
 
     @BeforeClass
     public void login() {
-        System.out.println("Authenticating user ...");
-        driver.manage().window().fullscreen();
-        LoginData credentials = userCredentials();
-        actions.login(credentials.username, credentials.password);
-        System.out.println("User authenticated successfully ...");
+        LoginData credentials = proCredentials();
+        generalactions.login(credentials.email, credentials.password);
     }
 
     public class LoginData {
-        private String username;
+        private String email;
         private String password;
 
-        public LoginData(String username, String password) {
-            this.username = username;
+        public LoginData(String email, String password) {
+            this.email = email;
             this.password = password;
         }
     }
+
+
 }

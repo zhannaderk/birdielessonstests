@@ -5,7 +5,7 @@ package co.inventorsoft.birdietests.utils;
  */
 public class Properties {
 
-    private static final String DEFAULT_BASE_URL = "https://test.advertisingreview.com/login";
+    private static final String DEFAULT_BASE_URL = "https://h2690933.stratoserver.net/app";
 
     /**
      *

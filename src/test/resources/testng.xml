@@ -1,18 +1,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Products Management" parallel="tests" >
-    <test name="Create New Product [Chrome]" >
+<suite name="Login" parallel="tests" >
+    <test name="Login [Chrome]" >
         <parameter name = "browser" value="chrome"/>
         <classes>
-            <class name="co.inventorsoft.birdietests.tests.UserCanLoginSuccessfully"/>
-            <class name="co.inventorsoft.birdietests.tests.InvitationSending"/>
+            <class name="co.inventorsoft.birdietests.tests.ProCanLoginWithValidCredentials"/>
         </classes>
     </test>
-    <test name="Create New Product [Firefox]" >
+    <test name="Login [Firefox]" >
         <parameter name = "browser" value="firefox"/>
         <classes>
-            <class name="co.inventorsoft.birdietests.tests.UserCanLoginSuccessfully"/>
-            <class name="co.inventorsoft.birdietests.tests.InvitationSending"/>
+            <class name="co.inventorsoft.birdietests.tests.ProCanLoginWithValidCredentials"/>
         </classes>
     </test>
     <!--Prepare test for firefox and IE browsers-->
