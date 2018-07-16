@@ -13,27 +13,27 @@ public class LoginPage extends PageObject{
 
     @FindBy(xpath = "/html/body/app-root/app-home/app-header/header/div/div[2]/nav/button")
     private WebElement signinBtn;
-    @FindBy(className = "sign-in-form__group__input mat-input-element mat-form-field-autofill-control ng-pristine ng-invalid ng-touched")
+    @FindBy(xpath = "//*[@id=\"mat-input-0\"]")
     private WebElement emailInput;
-    @FindBy(className = "sign-in-form__group__input mat-input-element mat-form-field-autofill-control ng-untouched ng-pristine ng-invalid")
+    @FindBy(xpath = "//*[@id=\"mat-input-1\"]")
     private WebElement passwordInput;
-    @FindBy (className = "sign-in-form__btn mat-raised-button mat-primary")
+    @FindBy (xpath = "//*[@id=\"mat-dialog-0\"]/ng-component/section/div[3]/form/button/span")
     private WebElement submitBtn;
+
 
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-
     public void open() {
        driver.get(Properties.getBaseUrl());
    }
 
-   public boolean isInitialized (){
+   public boolean loginPageIsInitialized (){
         return signinBtn.isDisplayed();
    }
 
-    public void waitForLoginPage() {
+   public void waitForLoginPage() {
         DriverWaiters.wait10SecondsForVisibilityOf(driver, signinBtn);
     }
 
@@ -41,9 +41,17 @@ public class LoginPage extends PageObject{
        signinBtn.click();
     }
 
+    public void clickEmail() {
+        emailInput.click();
+    }
+
     public void enterEmail(String email) {
         emailInput.sendKeys (email);
    }
+
+    public void clickPassword() {
+        passwordInput.click();
+    }
 
    public void enterPassword(String password) {
        passwordInput.sendKeys(password);

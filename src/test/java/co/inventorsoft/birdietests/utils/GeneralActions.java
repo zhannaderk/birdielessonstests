@@ -25,7 +25,9 @@ public class GeneralActions {
         loginpage.open();
         loginpage.waitForLoginPage();
         loginpage.clickSignInButton();
+        loginpage.clickEmail();
         loginpage.enterEmail(email);
+        loginpage.clickPassword();
         loginpage.enterPassword(password);
         loginpage.submitLoginData();
 

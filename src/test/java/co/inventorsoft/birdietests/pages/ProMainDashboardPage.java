@@ -1,4 +1,5 @@
 package co.inventorsoft.birdietests.pages;
+import co.inventorsoft.birdietests.utils.DriverWaiters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,15 +9,18 @@ public class ProMainDashboardPage extends PageObject {
 
 
 
-        @FindBy(className = "avatar__img avatar__img--horizontal avatar__img--horizontal--4_3")
-        private WebElement avatarheader;
+        @FindBy(xpath = "/html/body/app-root/app-dashboard-layout/div/app-header/header")
+        public WebElement loggedheader;
 
         public ProMainDashboardPage(WebDriver driver) {
             super(driver);
         }
 
-        public boolean isInitialized() {
-            return avatarheader.isDisplayed();
+    public void waitForDashboardPage() {
+        DriverWaiters.wait10SecondsForVisibilityOf(driver, loggedheader);
+    }
+        public boolean proMainDashboardisInitialized() {
+            return loggedheader.isDisplayed();
         }
 
     }

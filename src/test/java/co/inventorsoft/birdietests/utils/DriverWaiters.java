@@ -9,7 +9,7 @@ public class DriverWaiters {
 
 
     public static void wait10SecondsForVisibilityOf(WebDriver webDriver, WebElement element) {
-        WebDriverWait wait = new WebDriverWait(webDriver, 10);
+        WebDriverWait wait = new WebDriverWait(webDriver, 60);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 }
