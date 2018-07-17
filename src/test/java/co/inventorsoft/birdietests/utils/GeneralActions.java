@@ -9,27 +9,25 @@ public class GeneralActions {
     private WebDriver driver;
     private WebDriverWait wait;
 
-
-
     public GeneralActions (WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 30);
     }
-    public void loginDefault() {
+ //   public void loginDefault() {
 
-        login("salamandra2043@gmail.com", "12345");
-    }
+  //      login("salamandra2043@gmail.com", "12345");
+  //  }
+  public void login (String email, String password) {
+      LoginPage loginpage = new LoginPage(driver);
+      loginpage.open();
+      loginpage.waitForLoginPage();
+      loginpage.clickSignInButton();
+      loginpage.clickEmail();
+      loginpage.enterEmail(email);
+      loginpage.clickPassword();
+      loginpage.enterPassword(password);
+      loginpage.submitLoginData();
 
-    public void login (String email, String password) {
-        LoginPage loginpage = new LoginPage(driver);
-        loginpage.open();
-        loginpage.waitForLoginPage();
-        loginpage.clickSignInButton();
-        loginpage.clickEmail();
-        loginpage.enterEmail(email);
-        loginpage.clickPassword();
-        loginpage.enterPassword(password);
-        loginpage.submitLoginData();
+  }
 
-    }
 }

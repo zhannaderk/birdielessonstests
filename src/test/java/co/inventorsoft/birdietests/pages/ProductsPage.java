@@ -11,6 +11,7 @@ public class ProductsPage extends PageObject {
         super(driver);
     }
 
+
     @FindBy(xpath = "//*[@id=\"mat-tab-content-0-0\"]/div/app-products-table/div[2]/div/button")
     private WebElement addnewlessonicon;
 
@@ -25,6 +26,8 @@ public class ProductsPage extends PageObject {
 
     @FindBy (className = "birdie-modal__footer__btn ng-star-inserted")
     private WebElement addnewlessonbtn;
+
+
 
     public boolean productsPageIsInitialized() {
         return addnewlessonbtn.isDisplayed();
